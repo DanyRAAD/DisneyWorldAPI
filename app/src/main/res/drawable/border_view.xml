@@ -1,0 +1,11 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo sólido con transparencia -->
+    <solid android:color="@color/disney_blue" /> <!-- Blanco con 50% de transparencia -->
+
+    <!-- Borde con un color opaco -->
+    <stroke android:width="2dp" android:color="@color/disney_gold" />
+
+    <!-- Esquinas redondeadas -->
+    <corners android:radius="10dp" />
+</shape>
+

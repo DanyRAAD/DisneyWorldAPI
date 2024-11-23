@@ -6,7 +6,7 @@ import java.io.Serial
 data class Data(
 
     @SerializedName("_id")
-    var id: Int,
+    var id: String,
     @SerializedName("name")
     var name: String,
     @SerializedName("imageUrl")
@@ -14,3 +14,5 @@ data class Data(
     @SerializedName("createdAt")
     var createdAt: String
 )
+
+

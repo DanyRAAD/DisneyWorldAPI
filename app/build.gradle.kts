@@ -46,20 +46,27 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    //Para retrofit y Gson
+    // Retrofit y Gson
     implementation(libs.retrofit)
     implementation(libs.retrofit2.converter.gson)
 
-    //Adicional para el interceptor
+    // Interceptor para Retrofit
     implementation(libs.logging.interceptor)
 
-    //Glide y Picasso
+    // Glide y Picasso
     implementation(libs.glide)
     implementation(libs.picasso)
 
-    //Imágenes con bordes redondeados
+    // Glide para cargar imágenes
+    implementation(libs.glide.v4130)
+
+    // RecyclerView
+    implementation(libs.androidx.recyclerview)
+
+    // Imágenes con bordes redondeados
     implementation(libs.roundedimageview)
 
+    // Test y Android Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
