@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#141A31"
+    android:background="@drawable/disneybackground"
     tools:context=".view.CharacterDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,30 +43,48 @@
                         android:gravity="center_horizontal"
                         android:paddingBottom="10dp"
                         android:textColor="@color/white"
-                        android:textSize="25sp"
+                        android:textSize="30sp"
                         tools:text="Title" />
+
 
                     <com.makeramen.roundedimageview.RoundedImageView
                         android:id="@+id/ivImage"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        app:riv_corner_radius="10dp"
+                        android:layout_height="200dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:riv_corner_radius="125dp"
+                        app:riv_border_color="@color/disney_gold"
+                        app:riv_border_width="2dp"
                         tools:src="@mipmap/ic_launcher" />
 
                     <TextView
-                        android:id="@+id/tvLongDesc"
+                        android:id="@+id/Films"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/ubuntu"
-                        android:paddingLeft="15dp"
-                        android:paddingTop="15dp"
-                        android:paddingRight="15dp"
-                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="15dp"
+                        android:text="@string/films"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
-                        tools:text="Description" />
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/tvFilms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="15dp"
+                        android:text="@string/Peliculas"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+
                 </LinearLayout>
             </ScrollView>
 

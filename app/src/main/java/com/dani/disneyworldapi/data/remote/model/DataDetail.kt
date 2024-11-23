@@ -8,5 +8,5 @@ data class DataDetail(
     @SerializedName("imageUrl")
     var imageUrl: String,
     @SerializedName("films")
-    var films: String
+    var films: List<String>
 )

@@ -5,7 +5,7 @@ import java.io.Serial
 
 data class Data(
 
-    @SerializedName("_id")
+    @SerializedName("id")
     var id: String,
     @SerializedName("name")
     var name: String,

@@ -1,6 +1,7 @@
 package com.dani.disneyworldapi.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -34,6 +35,7 @@ class CharacterDetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
             id = it.getString(ARG_ID)
+            Log.d("CharacterDetailFragment", "ID recibido: $id")
         }
     }
 
@@ -45,6 +47,7 @@ class CharacterDetailFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
@@ -52,6 +55,7 @@ class CharacterDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         val retrofit = Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
@@ -61,22 +65,32 @@ class CharacterDetailFragment : Fragment() {
 
         val call = disneyApi.getDataDetailApiary(id)
 
+
+
         call.enqueue(object: Callback<DataDetail>{
             override fun onResponse(p0: Call<DataDetail>, response: Response<DataDetail>) {
-                binding.apply {
+
+               binding.apply {
+                    pbLoading.visibility = View.INVISIBLE
                     tvTitle.text = response.body()?.name
-                    //tvLongDesc.text = response.body()?.films
+
+                   val filmsText = response.body()?.films?.joinToString("\n") { film -> "- $film" }
+
+
+                   tvFilms.text = filmsText ?: "Sin películas"
 
                     Picasso.get()
-                        .load(response.body()?.imageUrl)
-                        .into(binding.ivImage)
+                       .load(response.body()?.imageUrl)
+                       .into(binding.ivImage)
 
                 }
+
 
             }
 
             override fun onFailure(p0: Call<DataDetail>, p1: Throwable) {
                 //manejamos el error
+                binding.pbLoading.visibility = View.INVISIBLE
             }
 
         })
